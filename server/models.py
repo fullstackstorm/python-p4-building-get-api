@@ -24,7 +24,7 @@ class Game(db.Model, SerializerMixin):
 class Review(db.Model, SerializerMixin):
     __tablename__ = 'reviews'
 
-    serialize_rules = ('-game.reviews', '-user.reviews',)
+    #serialize_rules = ('-game.reviews', '-user.reviews',)
 
     id = db.Column(db.Integer, primary_key=True)
     score = db.Column(db.Integer)
@@ -41,7 +41,7 @@ class Review(db.Model, SerializerMixin):
 class User(db.Model, SerializerMixin):
     __tablename__ = 'users'
 
-    serialize_rules = ('-reviews.user',)
+    #serialize_rules = ('-reviews.user',)
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
